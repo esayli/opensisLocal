@@ -1,19 +1,19 @@
 <?php
 #**************************************************************************
-#  openSIS is a free student information system for public and non-public 
+#  openSIS is a free student information system for public and non-public
 #  schools from Open Solutions for Education, Inc. web: www.os4ed.com
 #
-#  openSIS is  web-based, open source, and comes packed with features that 
-#  include student demographic info, scheduling, grade book, attendance, 
-#  report cards, eligibility, transcripts, parent portal, 
-#  student portal and more.   
+#  openSIS is  web-based, open source, and comes packed with features that
+#  include student demographic info, scheduling, grade book, attendance,
+#  report cards, eligibility, transcripts, parent portal,
+#  student portal and more.
 #
 #  Visit the openSIS web site at http://www.opensis.com to learn more.
-#  If you have question regarding this system or the license, please send 
+#  If you have question regarding this system or the license, please send
 #  an email to info@os4ed.com.
 #
-#  This program is released under the terms of the GNU General Public License as  
-#  published by the Free Software Foundation, version 2 of the License. 
+#  This program is released under the terms of the GNU General Public License as
+#  published by the Free Software Foundation, version 2 of the License.
 #  See license.txt.
 #
 #  This program is distributed in the hope that it will be useful,
@@ -29,9 +29,11 @@ function DrawTab($title,$link='',$tabcolor='tab_header_bg_active',$textcolor='',
 {
 	if(substr($title,0,1)!='<')
 		$title = ereg_replace(" ","&nbsp;",$title);
+	if($title == "Goals")
+		$title = "PBL Project Info";
 
 	$block_table .= "<table border=0 class=tab_header_bg_active cellspacing=0 cellpadding=0 align=left>";
-	
+
 	$block_table .= "  <tr class='$tabcolor' id=tab[".ereg_replace('[^a-zA-Z0-9]','_',$link)."]>";
 	$block_table .= "    <td class=tab_header_left_active></td><td valign=middle class=drawtab_header >";
 	if($link)
@@ -61,9 +63,11 @@ function DrawinactiveTab($title,$link='',$tabactivecolor='tab_header_bg',$textco
 {
 	if(substr($title,0,1)!='<')
 		$title = ereg_replace(" ","&nbsp;",$title);
+	if($title == "Goals")
+		$title = "PBL Project Info";
 
 	$block_table .= "<table cellspacing=0 cellpadding=0 align=left >";
-	
+
 	$block_table .= "  <tr class=tab_header_bg id=tab[".ereg_replace('[^a-zA-Z0-9]','_',$link)."]>";
 	$block_table .= "    <td class=tab_header_left ></td><td valign=middle class=drawinactivetab_header >";
 	if($link)
